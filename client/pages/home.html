@@ -29,6 +29,22 @@
       <button class="home-button" id="loadButton">Load More Images</button>
     </footer>
 
+    <!-- Modal structure -->
+    <div id="imageModal" class="home-modal">
+      <div class="home-modal-content">
+        <span class="home-close-btn">&times;</span>
+        <img id="modalImage" src="" alt="" />
+        <div id="modalDetails">
+          <p><strong>Tags:</strong> <span id="modalTags"></span></p>
+          <p><strong>User:</strong> <span id="modalUser"></span></p>
+          <p><strong>Views:</strong> <span id="modalViews"></span></p>
+          <p><strong>Downloads:</strong> <span id="modalDownloads"></span></p>
+          <p><strong>Likes:</strong> <span id="modalLikes"></span></p>
+          <a id="modalLink" href="" target="_blank">View on Pixabay</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Load JavaScript file as a module -->
     <script type="module" src="../js/index.js"></script>
   </body>
