@@ -27,8 +27,8 @@ app.get("/", (req, res) => {
 // Route to handle photo search
 app.get("/pixabay/images", async (req, res) => {
   console.log(`App geting!`);
-  const { search, perPage } = req.query;
-  console.log(search, perPage);
+  const { search, page, perPage } = req.query;
+  console.log(search, page, perPage);
 
   try {
     const response = await axios.get(process.env.BASE_URL, {
@@ -38,6 +38,7 @@ app.get("/pixabay/images", async (req, res) => {
         image_type: "photo",
         lang: "en",
         per_page: perPage,
+        page: page,
       },
     });
 
