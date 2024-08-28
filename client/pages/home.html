@@ -1,4 +1,4 @@
-<!-- client\pages\home.html -->
+<!-- client/pages/home.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Photos</title>
     <link rel="stylesheet" href="../css/home.css" />
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <header class="home-header">
@@ -13,17 +15,21 @@
         class="home-input"
         type="text"
         placeholder="Search for photos..."
+        id="searchInput"
       />
-      <button class="home-button">Search</button>
+      <button class="home-button" id="searchButton">Search</button>
       <button class="home-button">Show Favorites</button>
     </header>
 
-    <main class="home-main">
+    <main class="home-main" id="photoContainer">
       <!-- Images will be appended here -->
     </main>
 
     <footer class="home-footer">
       <button class="home-button">Load More Images</button>
     </footer>
+
+    <!-- Load JavaScript file as a module -->
+    <script type="module" src="../js/index.js"></script>
   </body>
 </html>

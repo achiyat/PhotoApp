@@ -24,28 +24,16 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/pages", "home.html"));
 });
 
-// ****** check ******
-const getPhotoFromAPI = async () => {
-  const endpoint = "http://localhost:3000/pixabay/images";
-  const word = "";
-  const perPage = 10;
-  await axios.get(endpoint, {
-    params: { search: word, perPage: perPage },
-  });
-  console.log("Data fetched successfully");
-};
-
 // Route to handle photo search
 app.get("/pixabay/images", async (req, res) => {
   console.log(`App geting!`);
   const { search, perPage } = req.query;
-  const baseUrl = "https://pixabay.com/api/";
-  const apiKey = process.env.PIXABAY_API_KEY;
+  console.log(search, perPage);
 
   try {
-    const response = await axios.get(baseUrl, {
+    const response = await axios.get(process.env.BASE_URL, {
       params: {
-        key: apiKey,
+        key: process.env.API_KEY,
         q: search,
         image_type: "photo",
         lang: "en",
@@ -54,8 +42,10 @@ app.get("/pixabay/images", async (req, res) => {
     });
 
     console.log(response.data.hits[0].id);
+    res.json(response.data);
   } catch (error) {
     console.error("Error fetching photo data:", error);
+    res.status(500).send("Error fetching photo data");
   }
 });
 
@@ -64,7 +54,6 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(process.env.PORT);
   console.log(process.env.BASE_URL);
-  console.log(process.env.PIXABAY_API_KEY);
+  console.log(process.env.API_KEY);
   console.log(`Server is running on http://localhost:${PORT}`);
-  getPhotoFromAPI();
 });
