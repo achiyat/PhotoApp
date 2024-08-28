@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
+  // Fetch and display the first 10 images on page load
+  await fetchAndDisplayImages();
+
   // Fetch images based on user search input when the search button is clicked
   searchButton.addEventListener("click", async () => {
     const searchTerm = searchInput.value.trim();
