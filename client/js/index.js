@@ -115,8 +115,14 @@ const displayImages = (photos) => {
     );
     star.addEventListener("click", () => toggleFavorite(photo, star));
 
+    // Overlay for likes and views
+    const overlay = document.createElement("div");
+    overlay.classList.add("home-image-overlay");
+    overlay.innerHTML = `❤️ ${photo.likes}  👁️ ${photo.views}`;
+
     imgContainer.appendChild(img);
     imgContainer.appendChild(star);
+    imgContainer.appendChild(overlay); // Append overlay to container
     imageContainer.appendChild(imgContainer);
   });
 };

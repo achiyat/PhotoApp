@@ -51,7 +51,25 @@ body {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  height: 250px;
+  height: 200px;
+}
+
+/* Hover overlay */
+.home-image-overlay {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-image-container:hover .home-image-overlay {
+  opacity: 1;
 }
 
 .home-favorite-icon {
@@ -82,7 +100,11 @@ body {
 .home-footer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin: 20px 0px;
+}
+
+.back-button {
+  display: none;
 }
 
 /* Modal styles */
@@ -114,10 +136,6 @@ body {
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.back-button {
-  display: none;
 }
 
 .home-close-btn:hover,
