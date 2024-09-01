@@ -54,12 +54,22 @@ body {
   height: 200px;
 }
 
-/* Hover overlay */
+.home-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-image-container:hover .home-image {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* displaying overlay */
 .home-image-overlay {
   position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
+  bottom: 0px;
+  left: -5px;
+  right: -7px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
