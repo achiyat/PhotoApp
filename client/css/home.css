@@ -82,6 +82,14 @@ body {
   opacity: 1;
 }
 
+.home-modal-content a {
+  color: #000;
+}
+
+.home-modal-content a:hover {
+  text-decoration: none;
+}
+
 .home-favorite-icon {
   display: flex;
   justify-content: center;
@@ -153,4 +161,132 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* responsivity */
+@media (min-width: 1200px) {
+  .home-main {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home-main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-main {
+    width: 97%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  .home-main {
+    width: 96%;
+  }
+
+  .home-image {
+    height: 180px;
+  }
+
+  .home-input {
+    width: 35vh;
+    font-size: 18px;
+  }
+
+  .home-button {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+
+  /* responsive modal */
+  .home-modal-content {
+    width: 90%;
+    margin: 20% auto;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+  .home-main {
+    width: 95%;
+  }
+
+  .home-image {
+    height: 140px;
+  }
+
+  .home-input {
+    width: 23vh;
+    font-size: 16px;
+  }
+
+  .home-button {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+
+  /* responsive modal */
+  .home-modal-content {
+    width: 95%;
+    margin: 25% auto;
+    padding: 15px;
+  }
+
+  .home-close-btn {
+    font-size: 24px;
+  }
+
+  .home-modal-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .home-main {
+    width: 93%;
+  }
+
+  .home-image {
+    height: 120px;
+  }
+
+  .home-image-overlay {
+    bottom: 2px;
+    left: -2px;
+    right: -4px;
+  }
+
+  .home-input {
+    width: 14vh;
+    font-size: 13px;
+  }
+
+  .home-button {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  /* responsive modal */
+  .home-modal-content {
+    width: 95%;
+    margin: 30% auto;
+    padding: 10px;
+  }
+
+  .home-close-btn {
+    font-size: 20px;
+  }
 }
